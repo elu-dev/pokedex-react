@@ -13,7 +13,8 @@ function Header() {
 const headerStyle = {
     background: 'linear-gradient(to right, #1C6DE6, #0DF2A1)',
     padding: '35px 0',
-    textAlign:'center'
+    textAlign:'center',
+    boxShadow: '0 0 20px #777'
 }
 
 const textStyle = {
