@@ -3,23 +3,25 @@ import SearchBar from './searchbar'
 
 function Header() {
     return (
-        <div style={headerStyle}>
+        <header style={headerStyle}>
             <h1 style={textStyle}>POKEDEX</h1>
             <SearchBar />
-        </div>
+        </header>
     )
 }
 
 const headerStyle = {
     background: 'linear-gradient(to right, #1C6DE6, #0DF2A1)',
-    padding:'20px',
-    height:'200px',
+    padding: '35px 0',
     textAlign:'center'
 }
 
 const textStyle = {
-    margin:'0 0 30px 0',
     color:'white',
+    margin: '0',
+    marginLeft: '.5em',
+    marginBottom: '20px',
+    padding:'0',
     fontSize:'70px',
     fontWeight:'lighter',
     letterSpacing:'.5em'

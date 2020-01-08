@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 function SearchBar() {
     return (
-        <form onSubmit={submitSearch}>
-            <input type="text" id="searchInput"/>
-            <input type="submit" value="Search" />
+        <form onSubmit={submitSearch} style={formStyle}>
+            <input type="text" style={inputStyle} placeholder="Search Pokemon or Type..." id="searchInput"/>
+            <input type="submit" style={buttonStyle} value="Search" />
         </form>
     )
 }
@@ -30,6 +30,27 @@ function submitSearch(e) {
 
     input.value = ''
     e.preventDefault()
+}
+
+const formStyle = {
+    width: '500px',
+    display: 'flex',
+    margin: '0 auto',
+}
+
+const inputStyle = {
+    flex: '9',
+    border: 'none',
+    height: '2.3em',
+    paddingLeft: '10px',
+    borderRadius: '50px 0 0 50px'
+}
+
+const buttonStyle = {
+    border: 'none',
+    borderRadius: '0 50px 50px 0',
+    color: 'rgb(18,199,183)',
+    background : 'white'
 }
 
 export default SearchBar
