@@ -14,7 +14,10 @@ class Results extends Component {
 
 const resultStyle = {
     margin: '30px',
-    // border: '1px solid red'
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))',
+    gridGap: '30px',
+    justifyItems: 'center',
 }
 
 export default Results;
