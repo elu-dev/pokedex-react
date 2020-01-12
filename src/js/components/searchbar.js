@@ -1,35 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 
-function SearchBar() {
-    return (
-        <form onSubmit={submitSearch} style={formStyle}>
-            <input type="text" style={inputStyle} placeholder="Search Pokemon or Type..." id="searchInput"/>
-            <input type="submit" style={buttonStyle} value="Search" />
-        </form>
-    )
-}
+class SearchBar extends Component {
+    
+    submitSearch(e) {
+        e.preventDefault()
+        const input = document.getElementById("search-input")
+        
+        if (!input.value) return
 
-async function fetchPokemon(poke) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
-    const pokemon = await response.json()
-    return pokemon
-}
+        fetch(`https://pokeapi.co/api/v2/type/${input.value}`)
+            .then(res => res.json()
+                .then(data => this.props.setPokemons(data.pokemon))
+                .catch(console.log))
 
-function showPokemon(data) {
-    const pokemon = document.createElement('img')
-    pokemon.setAttribute('src', data.sprites.front_default)
-    document.body.append(pokemon)
-}
+        input.value = ''
+    }
 
-function submitSearch(e) {
-    const input = document.getElementById("searchInput")
-
-    fetchPokemon(input.value)
-        .then(showPokemon)
-        .catch(console.log)
-
-    input.value = ''
-    e.preventDefault()
+    render() {
+        return (
+            <form onSubmit={this.submitSearch.bind(this)} style={formStyle}>
+                <input type="text" style={inputStyle}  id="search-input" placeholder="Search for a Pokemon or Type..." />
+                <input type="submit" style={buttonStyle} value="Search" />
+            </form>
+        )
+    }
 }
 
 const formStyle = {

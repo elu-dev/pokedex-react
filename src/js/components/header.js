@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import SearchBar from './searchbar'
 
-function Header() {
-    return (
-        <header style={headerStyle}>
-            <h1 style={textStyle}>POKEDEX</h1>
-            <SearchBar />
-        </header>
-    )
+class Header extends Component {
+    render() {
+        return (
+            <header style={headerStyle}>
+                <h1 style={textStyle}>POKEDEX</h1>
+                <SearchBar setPokemons={ this.props.setPokemons } />
+            </header>
+        )
+    }
 }
 
 const headerStyle = {
