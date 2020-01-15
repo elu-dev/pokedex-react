@@ -12,4 +12,10 @@ html, body {
     background: linear-gradient(to bottom right, #1C6DE6, #0DF2A1);
     box-shadow: 0 0 10px #777;
     color: white;
+    opacity: 1;
+    transition: opacity .1s ease;
+}
+
+.pokecard:hover {
+    opacity: .5;
 }

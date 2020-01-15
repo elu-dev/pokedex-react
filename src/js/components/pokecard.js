@@ -10,6 +10,7 @@ export class PokeCard extends Component {
                 { name }
                 <br/>
                 <img width="96px" height="96px" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} />
+                <div className="white-overlay"></div>
             </div>
         );
     }
