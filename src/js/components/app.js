@@ -1,28 +1,16 @@
-import React, { Component, useState } from 'react'
-import Header from './header'
-import Results from './results'
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Main from './main'
 
-
-class App extends Component {
-    state = {
-        pokecards: [],
-        types:[]
-    }
-
-    setPokemons = pokemons => {
-        this.setState({pokecards: [...pokemons]})
-    }
-
-
-    render() {
-        return (
-            <div className="container">
-                <Header setPokemons={ this.setPokemons.bind(this) } />
-                <Results pokecards={ this.state.pokecards } />
-            </div>
-        )
-    }
+function App() {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Main} />
+                <Route path="/test" component={Main} />
+            </Switch>
+        </BrowserRouter>
+    )
 }
 
-export default App
-
+export default App;
