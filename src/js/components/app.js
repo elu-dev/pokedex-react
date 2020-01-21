@@ -1,15 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import Main from './main'
 
 function App() {
     return (
-        <BrowserRouter>
+        <Router>
             <Switch>
                 <Route exact path="/" component={Main} />
                 <Route path="/test" component={Main} />
             </Switch>
-        </BrowserRouter>
+        </Router>
     )
 }
 
