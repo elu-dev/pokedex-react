@@ -5,7 +5,7 @@ class Header extends Component {
     render() {
         return (
             <header style={headerStyle}>
-                <h1 style={textStyle}>POKEDEX</h1>
+                <h1 className="header-text">POKEDEX</h1>
                 <SearchBar setPokemons={ this.props.setPokemons } />
             </header>
         )
@@ -17,17 +17,6 @@ const headerStyle = {
     padding: '35px 0',
     textAlign:'center',
     boxShadow: '0 0 20px #777'
-}
-
-const textStyle = {
-    color:'white',
-    margin: '0',
-    marginLeft: '.5em',
-    marginBottom: '20px',
-    padding:'0',
-    fontSize:'70px',
-    fontWeight:'lighter',
-    letterSpacing:'.5em'
 }
 
 export default Header
